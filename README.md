@@ -37,7 +37,7 @@ var dic_before = new Dictionary<string,object>();
 // シーン遷移先に伝えたい変数（マスクが開いたあと）
 var dic_after = new Dictionary<string,object>();
 
-WBWBTransition.SceneManager.LoadScene("シーン名",dic_before,dic_before);
+WBTransition.SceneManager.LoadScene("シーン名",dic_before,dic_before);
 ```
 
 <br>
