@@ -4,7 +4,7 @@ Unityでシーン遷移を簡単に実装できるパッケージです。
 <br>
 
 # DEMO
-https://github.com/FraMari495/WBSceneTransition/issues/2
+![demo_for_WBTransition](https://user-images.githubusercontent.com/48946038/132081462-e3e92262-cf50-46ca-9aca-ae9df762c503.gif)
 
 # 特徴
 
