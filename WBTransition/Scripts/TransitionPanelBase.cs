@@ -74,10 +74,6 @@ namespace WBTransition
             StartCoroutine(Wait());
             yield return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Single);
 
-            //ロード画面は、最低限WaitTimeだけは表示する
-            //(もし遷移先が軽いシーンならば遷移は一瞬で終わる。この処理を書かないと、ロード画面が一瞬だけ映り不自然となる)
-            yield return new WaitWhile(() => !endWaiting);
-
             //SceneInitializerを探す
             var initializer = FindInitializer();
 
@@ -87,6 +83,10 @@ namespace WBTransition
                 //マスクを外す直前の処理を行う
                 yield return initializer.BeforeOpenMask(onEndTransition);
             }
+
+            //ロード画面は、最低限WaitTimeだけは表示する
+            //(もし遷移先が軽いシーンならば遷移は一瞬で終わる。この処理を書かないと、ロード画面が一瞬だけ映り不自然となる)
+            yield return new WaitWhile(() => !endWaiting);
 
             //マスクを外す。外し終わるまで待機
             yield return Open();
